@@ -1,5 +1,6 @@
 library(ggplot2)
 library(dplyr)
+library(grid)
 library(gridExtra)
 library(rgdal)
 library(rgeos)
@@ -52,7 +53,7 @@ map_theme <- theme(
     panel.margin = unit(2, "cm"),
     strip.background = element_rect(fill=NA),
     strip.text.x = element_text(size=16),
-    plot.margin = unit(c(2, 1, 1, 2), "cm"),
+    plot.margin = unit(c(1.5, 0.5, 0.5, 0.5), "cm"),
     panel.grid.major = element_blank(),
     panel.grid.minor = element_blank(),
     axis.title.y=element_text(vjust=4),
@@ -101,14 +102,14 @@ gg <- gg + geom_map(data=cigar2011, map=us_map,
 
 gg <- gg + ggtitle(
     bquote(
-        atop(bold(.("Title")), atop("Sub-title"), "")
+        atop(bold(.("Cigar Popularity Per State")), atop("Cigar smokers in 2011"), "")
     )
 ) 
 
 #gg <- gg + guides(colour = guide_legend("Traffic Source")) 
 
 #gg <- gg + guide_legend("% of population", override.aes = list(colour = NA))
-gg <- gg + guides(fill = guide_legend("%", override.aes = list(colour = NA)))
+gg <- gg + guides(fill = guide_legend("%", override.aes = list(colour = NA), reverse = T))
 
 
 
