@@ -102,7 +102,7 @@ gg <- gg + geom_map(data=cigar2011, map=us_map,
 
 gg <- gg + ggtitle(
     bquote(
-        atop(bold(.("Cigar Popularity Per State")), atop("Cigar smokers in 2011"), "")
+        atop(bold(.("Cigar Popularity By State")), atop("Cigar smokers in 2011"), "")
     )
 ) 
 
